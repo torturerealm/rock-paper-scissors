@@ -41,6 +41,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerSelection = prompt("Rock, Paper, or Scissors? ", "").toLowerCase();
+let playerSelection = "RocK".toLowerCase();
 let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection))
