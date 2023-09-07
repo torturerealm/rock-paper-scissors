@@ -6,7 +6,7 @@ function getComputerChoice() {
     else if (random === 2) {
         return "paper";
     }
-    else {
+    else if (random === 3) {
         return "scissors";
     }
 }
