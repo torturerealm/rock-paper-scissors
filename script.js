@@ -3,11 +3,21 @@ function getComputerChoice() {
     // if 1, rock
     // if 2, paper
     // if 3, scissors
+    
+    let random = Math.floor(Math.random() * 3) + 1;
+    if (random === 1) {
+        return "rock";
+    }
+    else if (random === 2) {
+        return "paper";
+    }
+    else {
+        return "scissors";
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
-    // if playerSelection is equals to computerSelection
-        //return "It's a draw!"
+    if (playerSelection === computerSelection) return "It's a draw!";
 
     // Player wins
     // if playerSelection is rock and computerSelection is scissors
@@ -34,4 +44,3 @@ function playRound(playerSelection, computerSelection) {
 let playerSelection = prompt("Rock, Paper, or Scissors? ", "");
 let computerSelection = getComputerChoice();
 playRound(playerSelection, computerSelection);
-
