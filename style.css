@@ -41,3 +41,7 @@ button {
     border-radius: 8px;
     color: #0d041a;
 }
+
+button:hover {
+    background-color: purple;
+}
