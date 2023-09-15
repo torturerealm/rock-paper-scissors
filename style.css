@@ -40,6 +40,7 @@ button {
     border: 5px dashed #6b3d66;
     border-radius: 8px;
     color: #0d041a;
+    margin: 16px; 
 }
 
 button:hover {
