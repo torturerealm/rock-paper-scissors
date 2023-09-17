@@ -22,9 +22,9 @@ h1 {
     margin-bottom: 0;
 }
 
-h3, p {
+.info {
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 64px;
 }
 
 .pictures {
@@ -33,11 +33,18 @@ h3, p {
     gap: 32px;
 }
 
-.score {
+.score-display {
+    color: #d036a9;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 32px;
     gap: 64px;
 }
+
+.score {
+    margin: 0;
+}
+
 
 button {
     width: 100px;
