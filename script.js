@@ -64,7 +64,7 @@ function getScore(result) {
     if (result === "win") {
         if (playerScore < 5) {
             playerScore++;
-            changeRoundText();
+            changeScoreDisplay();
             console.log(`You won! Computer = ${computerScore} and You = ${playerScore}`);
         } else if (playerScore >= 5) {
             resetScore();
@@ -73,7 +73,7 @@ function getScore(result) {
     } else if (result === "lost") {
         if (computerScore < 5) {
             computerScore++;
-            changeRoundText();
+            changeScoreDisplay();
             console.log(`You lost! Computer = ${computerScore} and You =  ${playerScore}`);
         } else if (computerScore >= 5) {
             resetScore();
@@ -84,9 +84,8 @@ function getScore(result) {
     }
 }
 
-// not needed
-function changeRoundText() {
-    const h3 = document.querySelector("h3");
+function changeScoreDisplay() {
+    const scores = document.querySelector("score");
     round++;
     h3.textContent = `Round ${1 + round}`;
     if (round >= 5) {
