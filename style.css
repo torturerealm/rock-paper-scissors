@@ -63,3 +63,7 @@ button:hover {
 .icon {
     pointer-events: none;
 }
+
+.winning {
+    color: #12a0b0;
+}

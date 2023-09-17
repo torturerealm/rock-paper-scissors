@@ -28,6 +28,7 @@ function playRound(e) {
     // player loses
     else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) result = "lost";
     
+    displayChoices(playerSelection, computerSelection);
     getScore(result);
 }
 
@@ -35,6 +36,7 @@ function playRound(e) {
         // if (result === win) {
             // playerScore++;
             // function to change score display
+            // function to add element which displays winner of round
             // if (playerScore === 5) {
                 // function to add element which display winner
                 // function to change picture of loser
@@ -64,7 +66,7 @@ function getScore(result) {
     if (result === "win") {
         if (playerScore < 5) {
             playerScore++;
-            changeScoreDisplay("player");
+            updateScoreDisplay("player");
             console.log(`You won! Computer = ${computerScore} and You = ${playerScore}`);
         } else if (playerScore >= 5) {
             resetScore();
@@ -73,7 +75,7 @@ function getScore(result) {
     } else if (result === "lost") {
         if (computerScore < 5) {
             computerScore++;
-            changeScoreDisplay("computer");
+            updateScoreDisplay("computer");
             console.log(`You lost! Computer = ${computerScore} and You =  ${playerScore}`);
         } else if (computerScore >= 5) {
             resetScore();
@@ -84,15 +86,26 @@ function getScore(result) {
     }
 }
 
-function changeScoreDisplay(e) {
+function updateScoreDisplay(e) {
     const computerDisplay = document.querySelector(".computer-score");
     const playerDisplay = document.querySelector(".player-score");
 
     if (e === "player") {
-        playerDisplay.textContent = `${playerScore}/5: Player`;
+        playerDisplay.textContent = `${playerScore}/5 :Player`;
     } else if (e === "computer") { 
         computerDisplay.textContent = `Computer: ${computerScore}/5`;
     }
+}
+
+function displayChoices(playerChoice, computerChoice) {
+    const display = document.createElement("div");
+    display.className.add = "winning";
+    display.textContent = `Player chose ${playerChoice} and Computer chose ${computerChoice}`;
+    document.body.appendChild(display);
+}
+
+function removeChoices() {
+    
 }
 
 // player clicks one of buttons
