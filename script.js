@@ -104,10 +104,12 @@ function removeButtons() {
     buttons.remove();
 }
 
-function removeScoreDisplay() {
-    const rem = document.querySelector(".winner");
-    rem.classList.remove(".winning");
+function removeMinorText() {
+    const winner = document.querySelector(".winner");
+    winner.classList.remove(".winning");
     rem.textContent = "";
+
+
 }
 
 
