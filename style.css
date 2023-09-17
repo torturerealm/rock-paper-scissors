@@ -27,6 +27,12 @@ h3, p {
     margin-bottom: 0;
 }
 
+.pictures {
+    display: flex;
+    margin-bottom: 0;
+    gap: 32px;
+}
+
 .results {
     display: flex;
     justify-content: space-between;
