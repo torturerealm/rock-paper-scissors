@@ -67,3 +67,8 @@ button:hover {
 .winning {
     color: #12a0b0;
 }
+
+.outcome {
+    color: #12a0b0;
+    font-size: 2rem;
+}

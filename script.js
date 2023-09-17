@@ -29,7 +29,7 @@ function playRound(e) {
     else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) result = "lost";
     
     displayChoices(playerSelection, computerSelection, result);
-    getScore(result);;
+    getScore(result);
 }
 
     // getScore(result => {
@@ -55,13 +55,14 @@ function playRound(e) {
 // first to win 5 rounds wins
 function getScore(result) {
     if (result === "win") {
-        if (playerScore < 5) {
+        if (playerScore < 5 && computerScore < 5) {
             playerScore++;
             updateScoreDisplay("player");
             console.log(`You won! Computer = ${computerScore} and You = ${playerScore}`);
         } else if (playerScore === 5) {
             removeScoreDisplay();
             removeButtons();
+            getWinner("player");
         }        
 
     } else if (result === "lost") {
@@ -69,9 +70,10 @@ function getScore(result) {
             computerScore++;
             updateScoreDisplay("computer");
             console.log(`You lost! Computer = ${computerScore} and You =  ${playerScore}`);
-        } else if (computerScore === 5) {
+        } else if (computerScore === 5 && playerScore < 5) {
             removeScoreDisplay();
             removeButtons();
+            getWinner("computer");
         }
         
     } else {
@@ -104,7 +106,20 @@ function removeButtons() {
 
 function removeScoreDisplay() {
     const rem = document.querySelector(".winner");
+    rem.classList.remove(".winning");
     rem.textContent = "";
+}
+
+
+function getWinner(e) {
+    const winner = document.querySelector(".winner");
+    winner.classList.add("outcome");
+    
+    if (e === "player") {
+        winner.textContent = "YOU SAVED EVERYONE!";
+    } else if (e === "computer") {
+        winner.textContent = "YOU LOST! REFRESH THE PAGE."
+    }
 }
 
 // player clicks one of buttons
