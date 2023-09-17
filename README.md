@@ -1,2 +1,2 @@
 # rock-paper-scissors
-Simple game of rock, paper, and scissors
+Interactive game made using JavaScript, CSS(FlexBox), and HTML5
