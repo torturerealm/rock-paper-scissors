@@ -33,7 +33,7 @@ h3, p {
     gap: 32px;
 }
 
-.results {
+.score {
     display: flex;
     justify-content: space-between;
     gap: 64px;
