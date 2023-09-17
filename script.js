@@ -70,14 +70,16 @@ function changeRoundText() {
     }
 }
 
-// playround
-// if player wins, playerscore++
-// if player lost, computerscore++
-// if draw, nothing happens, player needs to click again
-
-// while (playerScore < 3 ), player wins game
-// if computerScore > 3, player lost game/computer wins game
-
+// player clicks one of buttons
+// function to get what button clicked
+// function to generate random number for computer choice
+// function to decide if player wins/lose/draws with computer
+// function to count the scores of computer and player
+// function to announce the winner of the game
+    // when player or computer reached five wins
+// function to reset the score
+// function to remove buttons 
+// function to add another button "try again"
 
 let computerScore = 0;
 let playerScore = 0;

@@ -46,3 +46,7 @@ button {
 button:hover {
     background-color: purple;
 }
+
+.icon {
+    pointer-events: none;
+}
