@@ -1,3 +1,8 @@
+let computerScore = 0;
+let playerScore = 0;
+let round = 0;
+
+
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3) + 1;
     if (random === 1) return "rock";
@@ -23,8 +28,27 @@ function playRound(e) {
     // player loses
     else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) result = "lost";
     
-    game(result);
+    getScore(result);
 }
+
+    // getScore(result => {
+        // if (result === win) {
+            // playerScore++;
+            // function to change score display
+            // if (playerScore === 5) {
+                // function to add element which display winner
+                // function to change picture of loser
+                // function to remove buttons
+                // (NOT NEEDED if with refresh) function to reset score
+                // function to add new button for "Try again" which refreshes screen
+            // }
+        // } else if (result === lost) {
+            // playerScore++;
+            // function to change score display
+        // } else (DRAW) {
+            // function to change score display
+        // }
+    // )};
 
 function resetScore() {
     computerScore = 0;
@@ -36,7 +60,7 @@ function resetRound() {
 }
 
 // first to win 5 rounds wins
-function game(result) {
+function getScore(result) {
     if (result === "win") {
         if (playerScore < 5) {
             playerScore++;
@@ -60,6 +84,7 @@ function game(result) {
     }
 }
 
+// not needed
 function changeRoundText() {
     const h3 = document.querySelector("h3");
     round++;
@@ -74,15 +99,15 @@ function changeRoundText() {
 // function to get what button clicked
 // function to generate random number for computer choice
 // function to decide if player wins/lose/draws with computer
-// function to count the scores of computer and player
+// ***function to count the scores of computer and player
+// function to change the score display
+
 // function to announce the winner of the game
     // when player or computer reached five wins
+// (optional) function to change the pictures depending the winner
 // function to reset the score
 // function to remove buttons 
 // function to add another button "try again"
 
-let computerScore = 0;
-let playerScore = 0;
-let round = 0;
 const btn = document.querySelectorAll("#btn");
 btn.forEach(btn => btn.addEventListener("click", playRound));
