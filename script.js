@@ -29,8 +29,7 @@ function playRound(e) {
     else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) result = "lost";
     
     displayChoices(playerSelection, computerSelection, result);
-    getScore(result);
-    removeButtons();
+    getScore(result);;
 }
 
     // getScore(result => {
@@ -53,15 +52,6 @@ function playRound(e) {
         // }
     // )};
 
-function resetScore() {
-    computerScore = 0;
-    playerScore = 0;
-}
-
-function resetRound() {
-    round = 0;
-}
-
 // first to win 5 rounds wins
 function getScore(result) {
     if (result === "win") {
@@ -69,8 +59,9 @@ function getScore(result) {
             playerScore++;
             updateScoreDisplay("player");
             console.log(`You won! Computer = ${computerScore} and You = ${playerScore}`);
-        } else if (playerScore >= 5) {
-            resetScore();
+        } else if (playerScore === 5) {
+            removeScoreDisplay();
+            removeButtons();
         }        
 
     } else if (result === "lost") {
@@ -78,8 +69,9 @@ function getScore(result) {
             computerScore++;
             updateScoreDisplay("computer");
             console.log(`You lost! Computer = ${computerScore} and You =  ${playerScore}`);
-        } else if (computerScore >= 5) {
-            resetScore();
+        } else if (computerScore === 5) {
+            removeScoreDisplay();
+            removeButtons();
         }
         
     } else {
@@ -108,6 +100,11 @@ function displayChoices(playerChoice, computerChoice, result) {
 function removeButtons() {
     const buttons = document.querySelector(".buttons");
     buttons.remove();
+}
+
+function removeScoreDisplay() {
+    const rem = document.querySelector(".winner");
+    rem.textContent = "";
 }
 
 // player clicks one of buttons
