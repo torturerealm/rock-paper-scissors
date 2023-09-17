@@ -59,19 +59,19 @@ function getScore(result) {
             playerScore++;
             updateScoreDisplay("player");
             console.log(`You won! Computer = ${computerScore} and You = ${playerScore}`);
-        } else if (playerScore === 5) {
-            removeScoreDisplay();
+        } else if (playerScore === 5 && computerScore < 5) {
+            removeMinorText();
             removeButtons();
             getWinner("player");
         }        
 
     } else if (result === "lost") {
-        if (computerScore < 5) {
+        if (computerScore < 5 && playerScore < 5) {
             computerScore++;
             updateScoreDisplay("computer");
             console.log(`You lost! Computer = ${computerScore} and You =  ${playerScore}`);
         } else if (computerScore === 5 && playerScore < 5) {
-            removeScoreDisplay();
+            removeMinorText();
             removeButtons();
             getWinner("computer");
         }
@@ -107,9 +107,10 @@ function removeButtons() {
 function removeMinorText() {
     const winner = document.querySelector(".winner");
     winner.classList.remove(".winning");
-    rem.textContent = "";
+    winner.textContent = "";
 
-
+    const score = document.querySelector(".score-display");
+    score.remove();
 }
 
 
