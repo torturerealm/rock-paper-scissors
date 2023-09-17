@@ -98,15 +98,13 @@ function updateScoreDisplay(e) {
 }
 
 function displayChoices(playerChoice, computerChoice) {
-    const display = document.createElement("div");
-    display.className.add = "winning";
-    display.textContent = `Player chose ${playerChoice} and Computer chose ${computerChoice}`;
-    document.body.appendChild(display);
+    const display = document.querySelector(".winner");
+
+    display.classList.add("winning");
+    display.textContent = `Player = ${playerChoice.toUpperCase()}, Computer = ${computerChoice.toUpperCase()}`;
 }
 
-function removeChoices() {
-    
-}
+
 
 // player clicks one of buttons
 // function to get what button clicked
