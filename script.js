@@ -28,8 +28,9 @@ function playRound(e) {
     // player loses
     else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) result = "lost";
     
-    displayChoices(playerSelection, computerSelection);
+    displayChoices(playerSelection, computerSelection, result);
     getScore(result);
+    removeButtons();
 }
 
     // getScore(result => {
@@ -97,14 +98,17 @@ function updateScoreDisplay(e) {
     }
 }
 
-function displayChoices(playerChoice, computerChoice) {
+function displayChoices(playerChoice, computerChoice, result) {
     const display = document.querySelector(".winner");
 
     display.classList.add("winning");
     display.textContent = `Player = ${playerChoice.toUpperCase()}, Computer = ${computerChoice.toUpperCase()}`;
 }
 
-
+function removeButtons() {
+    const buttons = document.querySelector(".buttons");
+    buttons.remove();
+}
 
 // player clicks one of buttons
 // function to get what button clicked
