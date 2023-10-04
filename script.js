@@ -32,26 +32,6 @@ function playRound(e) {
     getScore(result);
 }
 
-    // getScore(result => {
-        // if (result === win) {
-            // playerScore++;
-            // function to change score display
-            // function to add element which displays winner of round
-            // if (playerScore === 5) {
-                // function to add element which display winner
-                // function to change picture of loser
-                // function to remove buttons
-                // (NOT NEEDED if with refresh) function to reset score
-                // function to add new button for "Try again" which refreshes screen
-            // }
-        // } else if (result === lost) {
-            // playerScore++;
-            // function to change score display
-        // } else (DRAW) {
-            // function to change score display
-        // }
-    // )};
-
 // first to win 5 rounds wins
 function getScore(result) {
     if (result === "win") {
